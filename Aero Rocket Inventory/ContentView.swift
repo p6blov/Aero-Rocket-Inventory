@@ -9,59 +9,61 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationStack {
-            ZStack {
-                Color(.black)
-                    .ignoresSafeArea()
-                VStack {
-                    Text("SEDS Aerospace Rocket Inventory")
-                        .foregroundStyle(.white)
-                        .font(.largeTitle)
-                }
-            }
-            .toolbar {
-                ToolbarItemGroup(placement: .bottomBar) {
-                    Spacer()
-                    VStack {
-                        Button(action: {
-                            print("Search tapped")
-                        }) {
-                            Image(systemName: "magnifyingglass")
-                                .font(.system(size: 20)) // Increase icon size
+        ZStack {
+            Color.blue
+                .frame(minWidth: 200, maxWidth: .infinity, maxHeight: 100)
+                .ignoresSafeArea(edges: .top)
+            Text("Aerospace Rocket Inventory")
+                .foregroundColor(.white)
+            Spacer()
+        }
+        // MAIN CONTENT
+        ZStack {
+            Color(.black).ignoresSafeArea()
+        }
+        .toolbar {
+            ToolbarItemGroup(placement: .bottomBar) {
+                    HStack {
+                        Spacer()
+                        VStack {
+                            Button(action: {
+                                print("Search tapped")
+                            }) {
+                                Image(systemName: "magnifyingglass")
+                                    .font(.system(size: 20))
+                            }
+                            Text("Search").font(.caption).foregroundColor(.white)
                         }
-                        Text("Search").font(.caption).foregroundColor(.white)
-                    }
-                    Spacer()
-                    Spacer()
-                    VStack {
-                        Button(action: {
-                            print("Scan tapped")
-                        }) {
-                            Image(systemName: "qrcode.viewfinder")
-                                .font(.system(size: 20))
-                                .foregroundColor(.gray);
+                        Spacer()
+                        Spacer()
+                        VStack {
+                            Button(action: {
+                                print("Scan tapped")
+                            }) {
+                                Image(systemName: "qrcode.viewfinder")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(.gray);
+                            }
+                            Text("Scan").font(.caption).foregroundColor(.gray)
                         }
-                        Text("Scan").font(.caption).foregroundColor(.gray)
-                    }
-                    Spacer()
-                    Spacer()
-                    VStack {
-                        Button(action: {
-                            print("Find tapped")
-                        }) {
-                            Image(systemName: "shippingbox")
-                                .font(.system(size: 20))
-                                .foregroundColor(.gray);
+                        Spacer()
+                        Spacer()
+                        VStack {
+                            Button(action: {
+                                print("Find tapped")
+                            }) {
+                                Image(systemName: "shippingbox")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(.gray);
+                            }
+                            Text("Find").font(.caption).foregroundColor(.gray)
                         }
-                        Text("Find").font(.caption).foregroundColor(.gray)
+                        Spacer()
                     }
-                    Spacer()
                 }
             }
         }
-    }
 }
-
 #Preview {
     ContentView()
 }
