@@ -22,7 +22,7 @@ struct Aero_Rocket_InventoryApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ARITabView()
         }
     }
 }
